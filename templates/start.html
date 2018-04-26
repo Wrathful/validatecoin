@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Start page</title>
+</head>
+<body>
+    <div style="margin-top: 200px; text-align: center; font-size: 20px">Выберите фотографию для распознавания:</div>
+    <div>
+        <form action="/" method="POST" enctype="multipart/form-data">
+            <p style="text-align: center; font-size: 20px"><input type="file" name="file">
+                <button type="submit"> Загрузить</button>
+        </form>
+    </div>
+    <div style="margin-top: 200px; text-align: center; font-size: 20px">
+        <form>
+            {% if predicted %}
+                <h1>
+                    вероятность, что загруженная фотография монеты не является браком состовляет: {{predicted}}
+                </h1>
+            {% endif %}
+            <!--<input type="button" value="Графический отчет" onClick='location.href="http://localhost:5000/plot"'>-->
+        </form>
+    </div>
+</body>
+</html>
